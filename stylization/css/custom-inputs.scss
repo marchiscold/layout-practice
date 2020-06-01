@@ -1,0 +1,115 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 300px;
+  background-color: palegreen;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+input,
+select {
+  margin: 20px 0px;
+}
+
+.manufacturer {
+  position: relative;
+  &__checkbox {
+    position: absolute;
+    appearance: none;
+  }
+  &__checkbox:checked + &__label:after {
+    opacity: 1;
+  }
+  &__label {
+    cursor: pointer;
+    padding-left: 20px;
+    user-select: none;
+    color: #333;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      z-index: 100;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      opacity: 0;
+      background: url('/stylization/assets/check-mark.svg') no-repeat;
+      background-position: center center;
+      background-size: 12px 12px;
+      transition: opacity .1s linear;
+      z-index: 200;
+    }
+  }
+}
+
+%radio-label-position {
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.screen-option {
+  position: relative;
+  &__radio {
+    appearance: none;
+    position: absolute;
+  }
+  &__radio:checked + &__label:after {
+    opacity: 1;
+  }
+  &__label {
+    padding-left: 20px;
+    cursor: pointer;
+    user-select: none;
+    &:before {
+      content: '';
+      @extend %radio-label-position;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      z-index: 100;
+    }
+    &:after {
+      content: '';
+      @extend %radio-label-position;
+      transform: translateY(-50%) scale(0.7);
+      background-color: coral;
+      background-clip: content-box;
+      opacity: 0;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      transition: opacity .1s linear;
+      z-index: 100;
+    }
+  }
+}

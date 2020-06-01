@@ -3,9 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>custom-inputs</title>
+  <link rel="stylesheet" href="css/custom-inputs.css">
 </head>
 <body>
+  <div class="container">
+
+    <div class="input-wrapper">
+
+      <div class="manufacturer">
+        <input class="manufacturer__checkbox" type="checkbox" id="acer">
+        <label class="manufacturer__label" for="acer">Acer</label>
+      </div>
   
+  
+      <div class="screen-options">
+        <div class="screen-option">
+          <input class="screen-option__radio" type="radio" name="screen-option" id="radio-1">
+          <label class="screen-option__label" for="radio-1">Yes</label>
+        </div>
+    
+        <div class="screen-option">
+          <input class="screen-option__radio" type="radio" name="screen-option" id="radio-2">
+          <label class="screen-option__label" for="radio-2">No</label>
+        </div>
+    
+        <div class="screen-option">
+          <input class="screen-option__radio" type="radio" name="screen-option" id="radio-3">
+          <label class="screen-option__label" for="radio-3">Doesn't matter</label>
+        </div>
+      </div>
+
+    </div><!--.input-wrapper-->
+
+  </div><!--.container-->
 </body>
 </html>
