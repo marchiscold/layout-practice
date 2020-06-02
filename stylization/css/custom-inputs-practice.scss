@@ -34,6 +34,7 @@
     background-color: #fff;
     border: 1px solid #bbb;
     border-radius: 3px;
+    z-index: 100;
   }
   &__label:after {
     content: '';
@@ -49,6 +50,7 @@
     border: 1px solid #bbb;
     border-radius: 3px;
     transition: opacity .1s linear;
+    z-index: 200;
   }
 }
 
@@ -76,6 +78,7 @@
     background-color: #fff;
     border: 1px solid #bbb;
     border-radius: 50%;
+    z-index: 100;
   }
   &__label:after {
     content: '';
@@ -90,5 +93,6 @@
     opacity: 0;
     transform: scale(0.7);
     transition: opacity .1s linear;
+    z-index: 200;
   }
 }

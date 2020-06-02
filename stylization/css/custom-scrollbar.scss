@@ -1,0 +1,32 @@
+body {
+  background-color: olivedrab;
+}
+.container {
+  height: 300px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: palevioletred;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: hsl(180, 76%, 77%);
+    border-radius: 5px;
+    border: 1px solid #fff;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(180, 79%, 68%);
+  }
+  &__inner {
+    width: 200px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: paleturquoise;
+  }
+}
