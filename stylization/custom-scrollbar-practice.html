@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      width: 50%;
+      height: 100vh;
+      margin: 0 auto;
+      background-color: palegreen;
+      overflow-y: scroll;
+    }
+    .inner {
+      width: 80%;
+      height: 3000px;
+      background-color: hsl(197, 71%, 73%);
+      margin: 0 auto;
+    }
+    .outer::-webkit-scrollbar {
+      width: 10px;
+    }
+    .outer::-webkit-scrollbar-track {
+      background-color: #ddd;
+
+    }
+    .outer::-webkit-scrollbar-thumb {
+      background-color: hsl(197, 71%, 73%);
+      border-radius: 3px;
+    }
+    .outer::-webkit-scrollbar-thumb:hover {
+      background-color: hsl(197, 71%, 63%);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>
