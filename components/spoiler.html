@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spoiler</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  
+    html, body {
+      height: 100%;
+    }
+  
+    .container {
+      background-color: rebeccapurple;
+      height: 100%;
+      color: #fff;
+      padding-top: 50px;
+    }
+
+    .spoiler {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .spoiler__item {
+      margin-bottom: 10px;
+    }
+
+    .spoiler__title {
+      position: relative;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      padding-left: 30px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+    .spoiler__title:hover {
+      color: goldenrod;
+    }
+    .spoiler__title:hover:before,
+    .spoiler__title:hover:after {
+      background-color: goldenrod;
+    }
+
+    .spoiler__title:before,
+    .spoiler__title:after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 1px;
+      background-color: #fff;
+      top: 7px;
+      transition: transform .3s ease;
+    }
+
+    .spoiler__title:before {
+      left: 0;
+      transform: rotate(40deg);
+    }
+    .spoiler__title:after {
+      left: 7px;
+      transform: rotate(-40deg);
+    }
+
+    .spoiler__title.active:before {
+      transform: rotate(-40deg);
+      background-color: goldenrod;
+    }
+    .spoiler__title.active:after {
+      background-color: goldenrod;
+      transform: rotate(40deg);
+    }
+
+    .spoiler__text {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="spoiler">
+
+      <div class="spoiler__item">
+        <div class="spoiler__title">Headline 1</div>  
+        <div class="spoiler__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores impedit quis aut voluptates nulla! Est labore tempore deserunt veniam?</div>
+      </div>
+
+      <div class="spoiler__item">
+        <div class="spoiler__title">Headline 2</div>  
+        <div class="spoiler__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores impedit quis aut voluptates nulla! Est labore tempore deserunt veniam?</div>
+      </div>
+
+      <div class="spoiler__item">
+        <div class="spoiler__title">Headline 3</div>  
+        <div class="spoiler__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores impedit quis aut voluptates nulla! Est labore tempore deserunt veniam?</div>
+      </div>
+
+    </div><!--.spoiler-->
+
+  </div><!--.container-->
+
+  <script>
+    $(function () {
+      $('.spoiler__title').click(function () {
+        $('.spoiler__title').not($(this))
+                            .removeClass('active')
+                            .next()
+                            .slideUp(200);
+        $(this).toggleClass('active').next().slideToggle(200);
+      })
+    });
+  </script>
+</body>
+</html>
