@@ -62,8 +62,9 @@
   <script>
     $(function () {
       $('.header__burger').click(function () {
-        $('body').toggleClass('lock');
+        $(this).toggleClass('active');
         $('.nav').toggleClass('active');
+        $('body').toggleClass('lock');
       });
     });
   </script>

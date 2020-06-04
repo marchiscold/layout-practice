@@ -48,6 +48,24 @@ body.lock {
     width: 30px;
     height: 20px;
   }
+  .header__burger.active:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: 10px;
+  }
+  .header__burger.active:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 10px;
+  }
+  .header__burger.active span {
+    width: 0;
+    left: 50%;
+  }
+  .header__burger:before, .header__burger:after {
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+  }
   .header__burger:before {
     content: '';
     position: absolute;
@@ -73,6 +91,8 @@ body.lock {
     left: 0;
     top: 9px;
     background-color: #fff;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
   }
 }
 

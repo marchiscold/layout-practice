@@ -35,11 +35,26 @@ body.lock {
     display: none;
     right: 0;
     z-index: 4;
-    
     @media (max-width: 767px) {
       display: block;
       width: 30px;
       height: 20px;
+      &.active:before {
+        transform: rotate(45deg);
+        top: 10px;
+      }
+      &.active:after {
+        transform: rotate(-45deg);
+        top: 10px;
+      }
+      &.active span {
+        width: 0;
+        left: 50%;
+      }
+      &:before,
+      &:after {
+        transition: all .1s linear;
+      }
       &:before {
         content: '';
         position: absolute;
@@ -65,6 +80,7 @@ body.lock {
         left: 0;
         top: 9px;
         background-color: #fff;
+        transition: all .1s linear;
       }
     }
   }
