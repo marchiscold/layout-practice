@@ -40,9 +40,7 @@
       letter-spacing: 1px;
       cursor: pointer;
     }
-    .spoiler__title:hover {
-      color: goldenrod;
-    }
+
     .spoiler__title:hover:before,
     .spoiler__title:hover:after {
       background-color: goldenrod;
@@ -114,6 +112,7 @@
                             .removeClass('active')
                             .next()
                             .slideUp(200);
+        // $('.spoiler__text').not($(this).next()).slideUp(200);
         $(this).toggleClass('active').next().slideToggle(200);
       })
     });
