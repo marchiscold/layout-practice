@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/components/css/nav-bar-1.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container">
+        <div class="header__body">
+
+          <div class="header__burger"><span></span></div>
+
+          <div class="header__logo">
+            <img src="https://via.placeholder.com/70" alt="logo">
+          </div>
+
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="#">Home</a></li>
+              <li class="nav__item"><a href="#">About</a></li>
+              <li class="nav__item"><a href="#">Contacs</a></li>
+              <li class="nav__item"><a href="#">Features</a></li>
+              <li class="nav__item"><a href="#">Blog</a></li>
+              <li class="nav__item"><a href="#">Contacs</a></li>
+              <li class="nav__item"><a href="#">Features</a></li>
+              <li class="nav__item"><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+          
+        </div><!--.header__body-->
+      </div><!--.container-->
+    </header>
+
+    <main class="content">
+      <div class="container">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur doloremque quis numquam repellendus
+          dolores inventore rerum non quam perspiciatis voluptate. Aliquam illo itaque earum molestiae totam. Obcaecati
+          provident saepe error, aperiam facere, dolores incidunt magni unde, assumenda sint omnis architecto libero
+          veritatis explicabo eligendi! Molestias officia doloribus at deleniti corrupti possimus enim voluptatibus
+          officiis, repudiandae dolorum iste, labore a accusantium consequatur. Consequatur maxime eos quaerat ipsam
+          laboriosam temporibus qui doloremque nemo. Voluptatum temporibus repellendus veritatis alias dolorem optio
+          perferendis sit repellat inventore. Numquam ipsam, saepe, vel nulla nobis aliquid aperiam placeat eligendi
+          veritatis quaerat repellat labore? Aliquam rerum accusamus explicabo.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur doloremque quis numquam repellendus
+          dolores inventore rerum non quam perspiciatis voluptate. Aliquam illo itaque earum molestiae totam. Obcaecati
+          provident saepe error, aperiam facere, dolores incidunt magni unde, assumenda sint omnis architecto libero
+          veritatis explicabo eligendi! Molestias officia doloribus at deleniti corrupti possimus enim voluptatibus
+          officiis, repudiandae dolorum iste, labore a accusantium consequatur. Consequatur maxime eos quaerat ipsam
+          laboriosam temporibus qui doloremque nemo. Voluptatum temporibus repellendus veritatis alias dolorem optio
+          perferendis sit repellat inventore. Numquam ipsam, saepe, vel nulla nobis aliquid aperiam placeat eligendi
+          veritatis quaerat repellat labore? Aliquam rerum accusamus explicabo.</p>
+
+      </div>
+    </main>
+  </div><!--.wrapper-->
+  <script>
+    $(function () {
+      $('.header__burger').click(function () {
+        $('body').toggleClass('lock');
+        $('.nav').toggleClass('active');
+      });
+    });
+  </script>
+</body>
+</html>

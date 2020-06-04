@@ -1,0 +1,145 @@
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200;
+  padding: 0px 25px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rebeccapurple;
+    z-index: 3;
+  }
+  &__burger {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 4;
+    
+    @media (max-width: 767px) {
+      display: block;
+      width: 30px;
+      height: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+      }
+      & span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: 9px;
+        background-color: #fff;
+      }
+    }
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &__logo {
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    z-index: 4;
+  }
+}
+
+.nav {
+  position: relative;
+  z-index: 4;
+  &.active {
+    top: 0;
+  }
+  &__list {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    a {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    position: relative;
+    margin-left: 20px;
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0;
+      a:active {
+        background-color: lightgreen;
+      }
+      a {
+        font-size: 24px;
+        text-align: center;
+        padding: 10px 0px 10px 20px;
+        color: #333;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: palegreen;
+    transition: top .2s linear;
+    z-index: 1;
+    padding-top: 90px;
+  }
+}
+
+.content {
+  padding-top: 100px;
+}
