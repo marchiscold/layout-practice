@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/components/css/tabs.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $('.tabs__nav__title').click(function () {
+        $('.tabs__nav__title').not($(this)).removeClass('active');
+        $(this).addClass('active');
+
+        let tabClassName = $(this).data('forClass');
+        $('.tabs__content__item').not($(tabClassName)).removeClass('active');
+        $(tabClassName).addClass('active');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="tabs">
+
+      <div class="tabs__nav">
+        <div class="tabs__nav__title active" data-for-class=".tab1">Header 1</div>
+        <div class="tabs__nav__title" data-for-class=".tab2">Header 2</div>
+        <div class="tabs__nav__title" data-for-class=".tab3">Header 3</div>
+      </div>
+      
+      <div class="tabs__content">
+        <div class="tabs__content__item tab1 active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam at impedit
+          reprehenderit! Voluptatum labore voluptates maxime sed obcaecati officia reprehenderit!</div>
+        <div class="tabs__content__item tab2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias doloribus, debitis provident deserunt saepe odio veniam, atque doloremque quia eius quos, minima ullam aliquid. Repudiandae quia eveniet ab ratione eaque. Repellat veritatis doloremque praesentium ea temporibus eos harum accusantium aliquid quo numquam, error repudiandae beatae autem obcaecati eveniet cumque?</div>
+        <div class="tabs__content__item tab3">Lorem ipsum dolor sit amet.</div>
+      </div>
+    </div><!--tabs-->
+
+  </div><!--.wrapper-->
+</body>
+
+</html>
