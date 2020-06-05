@@ -10,10 +10,6 @@ html, body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-body.lock {
-  overflow: hidden;
-}
-
 .wrapper {
   background-color: palegreen;
 }
@@ -128,6 +124,9 @@ body.lock {
 }
 
 @media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
   .header__burger {
     display: block;
     cursor: pointer;
