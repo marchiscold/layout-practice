@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .wrapper {
+      background-color: #333;
+      height: 100vh;
+    }
+
+    .tabs {
+      width: 500px;
+      margin: 0 auto;
+      padding-top: 50px;
+      color: #fff;
+    }
+    .tabs__nav {
+      display: flex;
+      font-size: 20px;
+    }
+    .tabs__nav__item {
+      flex: 1 1 0;
+      text-align: center;
+      cursor: pointer;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .tabs__nav__item.active {
+      color: goldenrod;
+      border-bottom: 2px solid #000;
+    }
+
+    .tabs__content__item {
+      display: none;
+    }
+    .tabs__content__item.active {
+      display: block;
+      color: goldenrod;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="tabs">
+
+      <div class="tabs__nav">
+        <div class="tabs__nav__item active" data-tab=".tab1">Header1</div>
+        <div class="tabs__nav__item" data-tab=".tab2">Header2</div>
+        <div class="tabs__nav__item" data-tab=".tab3">Header3</div>
+      </div>
+
+      <div class="tabs__content">
+        <div class="tabs__content__item active tab1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ut at cumque
+          vero natus rem provident doloribus, harum omnis optio?</div>
+        <div class="tabs__content__item tab2">2Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ut at cumque
+          vero natus rem provident doloribus, harum omnis optio?</div>
+        <div class="tabs__content__item tab3">3Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ut at cumque
+          vero natus rem provident doloribus, harum omnis optio?</div>
+      </div>
+
+    </div><!--.tabs-->
+
+  </div><!--.wrapper-->
+</body>
+<script>
+  $(function () {
+    $('.tabs__nav__item').click(function () {
+      $('.tabs__nav__item').removeClass('active');
+      $('.tabs__content__item').removeClass('active');
+      $(this).addClass('active');
+      $($(this).data('tab')).addClass('active');
+    });
+  });
+</script>
+</html>
