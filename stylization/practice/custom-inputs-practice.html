@@ -3,123 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>custom inputs</title>
-  <style>
-    .container {
-      background-color: palegreen;
-      width: 50%;
-      margin: 0 auto;
-      margin-top: 30vh;
-      padding: 20px;
-    }
-
-    .checkbox {
-      position: relative;
-    }
-    .checkbox__input {
-      appearance: none;
-      -webkit-appearance: none;
-      position: absolute;
-    }
-    .checkbox__input:checked + .checkbox__label:after {
-      opacity: 1;
-    }
-    .checkbox__label {
-      padding-left: 20px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .checkbox__label:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 15px;
-      height: 15px;
-      background-color: #fff;
-      border-radius: 3px;
-      z-index: 100;
-    }
-    .checkbox__label:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 15px;
-      height: 15px;
-      background-color: #fff;
-      background: url('/stylization/assets/check-mark.svg') center no-repeat;
-      background-size: 13px 13px;
-      border-radius: 3px;
-      opacity: 0;
-      transition: opacity .1s linear;
-      z-index: 200;
-    }
-
-    .radio {
-      position: relative;
-    }
-    .radio__input {
-      appearance: none;
-      -webkit-appearance: none;
-      position: absolute;
-    }
-    .radio__input:checked + .radio__label:after {
-      opacity: 1;
-    }
-    .radio__label {
-      cursor: pointer;
-      padding-left: 20px;
-      user-select: none;
-    }
-    .radio__label:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 15px;
-      height: 15px;
-      background-color: #fff;
-      border-radius: 50%;
-      z-index: 100;
-    }
-    .radio__label:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 15px;
-      height: 15px;
-      background-color: skyblue;
-      transform: scale(.7);
-      border-radius: 50%;
-      opacity: 0;
-      transition: opacity .1s linear;
-      z-index: 200;
-    }
-  </style>
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylization/css/custom-inputs-practice.css">
 </head>
 <body>
-  <div class="container">
+  <div class="wrapper">
 
     <div class="checkbox">
-      <input class="checkbox__input" type="checkbox" name="acer" id="chk1">
+      <input type="checkbox" class="checkbox__input" id="chk1">
       <label for="chk1" class="checkbox__label">Acer</label>
     </div>
 
-    <div class="radio">
-      <input class="radio__input" type="radio" name="gender" id="rd1">
-      <label for="rd1" class="radio__label">Male</label>
-    </div>
-    <div class="radio">
-      <input class="radio__input" type="radio" name="gender" id="rd2">
-      <label for="rd2" class="radio__label">Female</label>
-    </div>
-    <div class="radio">
-      <input class="radio__input" type="radio" name="gender" id="rd3">
-      <label for="rd3" class="radio__label">Other</label>
-    </div>
 
+    <div class="gender-select">
+      <div class="radio">
+        <input type="radio" name="gender" class="radio__input" id="rd1">
+        <label for="rd1" class="radio__label">Male</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="gender" class="radio__input" id="rd2">
+        <label for="rd2" class="radio__label">Female</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="gender" class="radio__input" id="rd3">
+        <label for="rd3" class="radio__label">Other</label>
+      </div>
+    </div>
   </div>
 </body>
 </html>
