@@ -1,129 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Spoiler</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $('.spoiler__title').click(function () {
+        $('.spoiler__title').not($(this)).removeClass('active');
+        $(this).toggleClass('active');
+        $('.spoiler__content').not($(this).next()).slideUp(200);
+        $(this).next().slideToggle(200);
+      });
+    });
+  </script>
   <style>
-    *,
-    *:before,
-    *:after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      *, *:before, *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+    
+      html, body {
+        height: 100%;
+      }
+    
+      body {
+        background-color: rebeccapurple;
+        color: #fff;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      }
 
-    html,
-    body {
-      height: 100%;
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      color: #fff;
-    }
+      .spoiler {
+        width: 500px;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
 
-    .container {
-      height: 100%;
-      background-color: rebeccapurple;
-    }
+      .spoiler__title {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        padding-left: 34px;
+        text-transform: uppercase;
+        font-size: 24px;
+        word-spacing: 1px;
+        line-height: 1.5;
+      }
 
-    .spoiler {
-      width: 50%;
-      margin: 0 auto;
-      padding: 50px 0px 0px 0px;
-    }
+      .spoiler__title:hover:before,
+      .spoiler__title:hover:after {
+        background-color: goldenrod;
+      }
+      .spoiler__title.active:before,
+      .spoiler__title.active:after {
+        background-color: goldenrod;
+      }
 
-    .spoiler__item {
-      margin-bottom: 10px;
-    }
+      .spoiler__title.active:before {
+        transform: rotate(-40deg);
+      }
+      .spoiler__title.active:after {
+        transform: rotate(40deg);
+      }
 
-    .spoiler__title {
-      position: relative;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 0px 0px 0px 25px;
-    }
-    .spoiler__title:before,
-    .spoiler__title:after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 1px;
-      top: 7px;
-      background-color: #fff;
-      transition: transform .2s linear;
-    }
-    .spoiler__title:before {
-      left: 0;
-      transform: rotate(40deg);
-    }
-    .spoiler__title:after {
-      left: 7px;
-      transform: rotate(-40deg);
-    }
-    .spoiler__title.active:before {
-      left: 0;
-      transform: rotate(-40deg);
-      background-color: goldenrod;
-    }
-    .spoiler__title.active:after {
-      left: 7px;
-      transform: rotate(40deg);
-      background-color: goldenrod;
-    }
 
-    .spoiler__text {
-      display: none;
-    }
+
+      .spoiler__title:before,
+      .spoiler__title:after {
+        content: '';
+        position: absolute;
+        top: 18px;
+        width: 1rem;
+        height: 2px;
+        background-color: #fff;
+        transition: transform 0.2s linear;
+        border-radius: 1px;
+      }
+
+      .spoiler__title:before {
+        left: 0;
+        transform: rotate(40deg);
+      }
+      
+      .spoiler__title:after {
+        transform: rotate(-40deg);
+        left: 0.72rem;
+      }
+
+    
+      .spoiler__content {
+        font-size: 18px;
+        display: none;
+      }
+
   </style>
 </head>
-
-<script>
-  $(function () {
-    $('.spoiler__title').click(function () {
-      $('.spoiler__title').not($(this)).removeClass('active');
-      $('.spoiler__text').not($(this).next()).slideUp();
-      $(this).toggleClass('active');
-      $(this).next().slideToggle();
-    });
-  });
-</script>
-
 <body>
-  <div class="container">
+  <div class="spoiler">
 
-    <div class="spoiler">
+    <div class="spoiler__item">
+      <div class="spoiler__title active">Header 1</div>
+      <div class="spoiler__content active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quasi adipisci
+        consequatur asperiores libero praesentium voluptate, doloribus exercitationem repudiandae ab.</div>
+    </div>
+    <div class="spoiler__item">
+      <div class="spoiler__title">Header 2</div>
+      <div class="spoiler__content">2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quasi adipisci
+        consequatur asperiores libero praesentium voluptate, doloribus exercitationem repudiandae ab.</div>
+    </div>
+    <div class="spoiler__item">
+      <div class="spoiler__title">Header 3</div>
+      <div class="spoiler__content">3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quasi adipisci
+        consequatur asperiores libero praesentium voluptate, doloribus exercitationem repudiandae ab.</div>
+    </div>
 
-      <div class="spoiler__item">
-        <div class="spoiler__title">Header 1</div>
-        <div class="spoiler__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi reiciendis beatae qui
-          deleniti pariatur fugiat cumque laborum, voluptatum iusto perspiciatis excepturi inventore. Quos, aperiam
-          tempore. Eaque odit error commodi voluptate exercitationem temporibus cupiditate voluptatem similique animi.
-          Distinctio voluptatibus voluptatum soluta, provident numquam quibusdam repudiandae fuga eius ad maxime animi
-          excepturi!</div>
-      </div>
-
-      <div class="spoiler__item">
-        <div class="spoiler__title">Header 2</div>
-        <div class="spoiler__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi reiciendis beatae qui
-          deleniti pariatur fugiat cumque laborum, voluptatum iusto perspiciatis excepturi inventore. Quos, aperiam
-          tempore. Eaque odit error commodi voluptate exercitationem temporibus cupiditate voluptatem similique animi.
-          Distinctio voluptatibus voluptatum soluta, provident numquam quibusdam repudiandae fuga eius ad maxime animi
-          excepturi!</div>
-      </div>
-
-      <div class="spoiler__item">
-        <div class="spoiler__title">Header 3</div>
-        <div class="spoiler__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi reiciendis beatae qui
-          deleniti pariatur fugiat cumque laborum, voluptatum iusto perspiciatis excepturi inventore. Quos, aperiam
-          tempore. Eaque odit error commodi voluptate exercitationem temporibus cupiditate voluptatem similique animi.
-          Distinctio voluptatibus voluptatum soluta, provident numquam quibusdam repudiandae fuga eius ad maxime animi
-          excepturi!</div>
-      </div>
-
-    </div><!--.spoiler-->
-
-  </div><!--.container-->
+  </div>
 </body>
-
 </html>
