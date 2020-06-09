@@ -13,7 +13,6 @@ html, body {
 
 .wrapper {
   display: flex;
-  justify-content: center;
   width: 50%;
   margin: 0 auto;
   color: #fff;
@@ -32,6 +31,10 @@ html, body {
   .menu__list {
     display: flex;
     position: relative;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
   
   .menu__link {
@@ -41,9 +44,7 @@ html, body {
     padding: 5px 10px;
   }
   .menu__item {
-    &:hover {
-      background-color: #222;
-    }
+    position: relative;
   }
 }
 
@@ -52,20 +53,32 @@ html, body {
   display: block;
 }
 
+@media (max-width: 767px) {
+  .menu__item.active > .sub-menu__list {
+    display: block;
+  }
+  .menu__item:not(.active) > .sub-menu__list {
+    display: none;
+  }
+}
+
 .sub-menu__list {
   display: none;
   position: absolute;
-  top: .8rem;
-  padding-top: 20px;
+  top: 1.3rem;
+  padding-top: 15px;
+
+  @media (max-width: 767px) {
+    position: relative;
+    top: 0;
+    padding-top: 0;
+  }
   
   .sub-menu__item {
     position: relative;
     background-color: goldenrod;
     min-width: 210px;
 
-    &:hover {
-      background-color: hsl(43, 74%, 39%);
-    }
     &:first-child {
       border-radius: 5px 5px 0px 0px;
     }
@@ -84,11 +97,27 @@ html, body {
   display: block;
 }
 
+@media (max-width: 767px) {
+  .sub-menu__item.active > .sub-sub-menu__list {
+    display: block;
+  }
+  .sub-menu__item:not(.active) > .sub-sub-menu__list {
+    display: none;
+  }
+}
+
 .sub-sub-menu__list {
   display: none;
   position: absolute;
   top: 0;
   left: 100%;
+
+  @media (max-width: 767px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 0;
+  }
 
   .sub-sub-menu__item {
     background-color: rebeccapurple;
@@ -97,9 +126,6 @@ html, body {
     }
     &:last-child {
       border-radius: 0px 0px 5px 5px;
-    }
-    &:hover {
-      background-color: hsl(270, 50%, 30%);
     }
   }
 

@@ -16,9 +16,6 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 50%;
   margin: 0 auto;
   color: #fff;
@@ -41,6 +38,15 @@ html, body {
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .menu .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .menu .menu__link {
   display: block;
   text-decoration: none;
@@ -48,29 +54,42 @@ html, body {
   padding: 5px 10px;
 }
 
-.menu .menu__item:hover {
-  background-color: #222;
+.menu .menu__item {
+  position: relative;
 }
 
 .menu__item:hover > .sub-menu__list {
   display: block;
 }
 
+@media (max-width: 767px) {
+  .menu__item.active > .sub-menu__list {
+    display: block;
+  }
+  .menu__item:not(.active) > .sub-menu__list {
+    display: none;
+  }
+}
+
 .sub-menu__list {
   display: none;
   position: absolute;
-  top: .8rem;
-  padding-top: 20px;
+  top: 1.3rem;
+  padding-top: 15px;
+}
+
+@media (max-width: 767px) {
+  .sub-menu__list {
+    position: relative;
+    top: 0;
+    padding-top: 0;
+  }
 }
 
 .sub-menu__list .sub-menu__item {
   position: relative;
   background-color: goldenrod;
   min-width: 210px;
-}
-
-.sub-menu__list .sub-menu__item:hover {
-  background-color: #ad831a;
 }
 
 .sub-menu__list .sub-menu__item:first-child {
@@ -90,11 +109,29 @@ html, body {
   display: block;
 }
 
+@media (max-width: 767px) {
+  .sub-menu__item.active > .sub-sub-menu__list {
+    display: block;
+  }
+  .sub-menu__item:not(.active) > .sub-sub-menu__list {
+    display: none;
+  }
+}
+
 .sub-sub-menu__list {
   display: none;
   position: absolute;
   top: 0;
   left: 100%;
+}
+
+@media (max-width: 767px) {
+  .sub-sub-menu__list {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 0;
+  }
 }
 
 .sub-sub-menu__list .sub-sub-menu__item {
@@ -107,10 +144,6 @@ html, body {
 
 .sub-sub-menu__list .sub-sub-menu__item:last-child {
   border-radius: 0px 0px 5px 5px;
-}
-
-.sub-sub-menu__list .sub-sub-menu__item:hover {
-  background-color: #4d2673;
 }
 
 .sub-sub-menu__list .sub-sub-menu__link {
