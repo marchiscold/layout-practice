@@ -28,6 +28,12 @@ select {
   &__checkbox {
     position: absolute;
     appearance: none;
+    // IE 11 compatibility
+    // Screen readers can ignore elements with size = 0px 
+    // width: 1px;
+    // height: 1px;
+    // overflow: hidden;
+    // clip: rect(0, 0, 0, 0);
   }
   &__checkbox:checked + &__label:after {
     opacity: 1;

@@ -90,6 +90,8 @@
       const modal = document.querySelector('.modal');
       const modalClose = document.querySelector('.modal__close');
       const modalLink = document.querySelector('.modal-link');
+
+      let isLocked = false;
   
       modalLink.addEventListener('click', ev => {
         ev.preventDefault();
@@ -108,16 +110,25 @@
       })
 
       function closeModal (modalWindow) {
+        if (isLocked) {
+          return;
+        }
+
         modal.classList.remove('modal--open');
         body.classList.remove('lock');
         body.style.paddingRight = '0px';
       }
 
       function openModal (modalWindow) {
+        isLocked = true;
         let paddingOffset = window.innerWidth - document.documentElement.clientWidth;
         modal.classList.add('modal--open');
         body.classList.add('lock');
         body.style.paddingRight = paddingOffset + 'px';
+
+        setTimeout(() => {
+          isLocked = false;
+        }, 300);
       }
 
     });
@@ -127,7 +138,7 @@
 
 <body>
   <div class="wrapper">
-    <div class="modal modal--open">
+    <div class="modal">
       <div class="modal__inner">
         <div class="modal__content">
           <a href="#" class="modal__close">X</a>
